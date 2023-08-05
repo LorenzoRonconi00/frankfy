@@ -24,7 +24,7 @@ const UploadModal = () => {
         handleSubmit,
         reset
     } = useForm<FieldValues>({
-        defaulValues: {
+        defaultValues: {
             author: '',
             title: '',
             song: null,
