@@ -23,6 +23,7 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
     const player = usePlayer();
     const [volume, setVolume] = useState(1);
     const [isPlaying, setIsPlaying] = useState(false);
+    const [currentTime, setCurrentTime] = useState(0);
 
     const Icon = isPlaying ? BsPauseFill : BsPlayFill;
     const VolumeIcon = volume === 0 ? HiSpeakerXMark : HiSpeakerWave
@@ -72,6 +73,27 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
             format: ['mp3']
         }
     );
+
+    const onSliderChange = (value: number) => {
+        const normalizedValue = value / sound.duration();
+        setCurrentTime(normalizedValue);
+        sound.seek(value);
+    };
+
+    const onSliderNext = () => {
+        const newTime = currentTime + 10;
+        const maxTime = sound.duration();
+        const adjustedTime = Math.min(newTime, maxTime);
+        setCurrentTime(adjustedTime);
+        sound.seek(adjustedTime);
+    };
+
+    const onSliderPrevious = () => {
+        const newTime = currentTime - 10;
+        const adjustedTime = Math.max(newTime, 0);
+        setCurrentTime(adjustedTime);
+        sound.seek(adjustedTime);
+    };
 
     useEffect(() => {
         sound?.play();
@@ -148,7 +170,28 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
                     />
                 </div>
             </div>
+
+            <div className="hidden md:flex w-full justify-center items-center gap-x-6">
+                <AiFillStepBackward
+                    onClick={onSliderPrevious}
+                    size={30}
+                    className="text-neutral-400 cursor-pointer hover:text-white transition"
+                />
+                <Slider
+                    value={currentTime * sound.duration()}
+                    onChange={onSliderChange}
+                />
+                <AiFillStepForward
+                    onClick={onSliderNext}
+                    size={30}
+                    className="text-neutral-400 cursor-pointer hover:text-white transition"
+                />
+            </div>
+
+            
         </div>
+
+        
     );
 }
 
