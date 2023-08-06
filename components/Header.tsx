@@ -10,7 +10,6 @@ import Button from "./Button";
 import useAuthModal from "@/hooks/useAuthModal";
 import {useSupabaseClient} from "@supabase/auth-helpers-react";
 import { useUser } from "@/hooks/useUser";
-import {FaUserAlt} from "react-icons/fa";
 import {toast} from "react-hot-toast";
 
 interface HeaderProps{
@@ -77,11 +76,7 @@ const Header: React.FC<HeaderProps> = ({
                             className="bg-white px-6 py-2">
                                 Logout
                             </Button>
-                            <Button
-                            onClick={() => router.push('/account')}
-                            className="bg-white">
-                                <FaUserAlt />
-                            </Button>
+                            
                         </div>
                     ): (
                         <>
