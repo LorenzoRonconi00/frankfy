@@ -74,29 +74,6 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
         }
     );
 
-    const onSliderChange = (value: number) => {
-        if(sound){
-            const normalizedValue = value / sound.duration();
-        setCurrentTime(normalizedValue);
-        sound.seek(value);
-        }
-    };
-
-    const onSliderNext = () => {
-        const newTime = currentTime + 10;
-        const maxTime = sound.duration();
-        const adjustedTime = Math.min(newTime, maxTime);
-        setCurrentTime(adjustedTime);
-        sound.seek(adjustedTime);
-    };
-
-    const onSliderPrevious = () => {
-        const newTime = currentTime - 10;
-        const adjustedTime = Math.max(newTime, 0);
-        setCurrentTime(adjustedTime);
-        sound.seek(adjustedTime);
-    };
-
     useEffect(() => {
         sound?.play();
 
@@ -171,26 +148,7 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
                     onChange={(value) => setVolume(value)}
                     />
                 </div>
-            </div>
-
-            <div className="hidden md:flex w-full justify-center items-center gap-x-6">
-                <AiFillStepBackward
-                    onClick={onSliderPrevious}
-                    size={30}
-                    className="text-neutral-400 cursor-pointer hover:text-white transition"
-                />
-                <Slider
-                    value={currentTime * sound.duration()}
-                    onChange={onSliderChange}
-                />
-                <AiFillStepForward
-                    onClick={onSliderNext}
-                    size={30}
-                    className="text-neutral-400 cursor-pointer hover:text-white transition"
-                />
-            </div>
-
-            
+            </div>          
         </div>
 
         
