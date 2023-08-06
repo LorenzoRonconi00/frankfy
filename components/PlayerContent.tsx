@@ -75,9 +75,11 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
     );
 
     const onSliderChange = (value: number) => {
-        const normalizedValue = value / sound.duration();
+        if(sound){
+            const normalizedValue = value / sound.duration();
         setCurrentTime(normalizedValue);
         sound.seek(value);
+        }
     };
 
     const onSliderNext = () => {
