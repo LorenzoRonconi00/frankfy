@@ -38,6 +38,15 @@ const Header: React.FC<HeaderProps> = ({
             toast.success('Logout eseguito correttamente');
         }
     }
+
+    const handleHomeClick = () => {
+        router.push('/');
+    }
+
+    const handleSearchClick = () => {
+        router.push('/search');
+    }
+
     return(
         <div className={twMerge(`
             h-fit
@@ -61,10 +70,14 @@ const Header: React.FC<HeaderProps> = ({
                     </button>
                 </div>
                 <div className="flex md:hidden gap-x-2 items-center">
-                    <button className="rounded-full p-2 bg-white flex items-center justify-center hover:opacity-75 transition">
+                    <button 
+                    onClick={handleHomeClick}
+                    className="rounded-full p-2 bg-white flex items-center justify-center hover:opacity-75 transition">
                         <HiHome className="text-black" size={20}/>
                     </button>
-                    <button className="rounded-full p-2 bg-white flex items-center justify-center hover:opacity-75 transition">
+                    <button 
+                    onClick={handleSearchClick}
+                    className="rounded-full p-2 bg-white flex items-center justify-center hover:opacity-75 transition">
                         <BiSearch className="text-black" size={20}/>
                     </button>
                 </div>
