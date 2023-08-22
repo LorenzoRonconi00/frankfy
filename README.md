@@ -1,5 +1,6 @@
 ## Il sito è disponibile al link [zapper-wine.vercel.app](https://zapper-wine.vercel.app/)
 ## Per poter accedere ed utilizzare il servizio si prega di scrivermi presso il contatto lorenzoronconi60@gmail.com
+## Oppure loggarsi con le credenziali: ronconilorenzo5@gmail.com  /  Prova123 
 
 ![Alt text](https://github.com/LorenzoRonconi00/zapper/blob/main/Schermata%202023-08-22%20alle%2015.47.44.png)
 
