@@ -1,7 +1,7 @@
 ## Il sito è disponibile al link [zapper-wine.vercel.app](https://zapper-wine.vercel.app/)
 ## Per poter accedere ed utilizzare il servizio si prega di scrivermi presso il contatto lorenzoronconi60@gmail.com
 
-![Alt text]([https://zapper-wine.vercel.app/](https://github.com/LorenzoRonconi00/zapper/blob/main/Schermata%202023-08-22%20alle%2015.47.44.png))
+![Alt text](https://zapper-wine.vercel.app/](https://github.com/LorenzoRonconi00/zapper/blob/main/Schermata%202023-08-22%20alle%2015.47.44.png)
 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
