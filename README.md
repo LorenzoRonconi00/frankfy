@@ -1,4 +1,5 @@
-Il sito è disponibile al link [zapper-wine.vercel.app](https://zapper-wine.vercel.app/)
+## Il sito è disponibile al link [zapper-wine.vercel.app](https://zapper-wine.vercel.app/)
+## Per poter accedere ed utilizzare il servizio si prega di scrivermi presso il contatto lorenzoronconi60@gmail.com
 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
